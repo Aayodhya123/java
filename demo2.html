@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>MY Application</title>
+    <style>
+        #container{
+            height: 50px;
+            width: 250px;
+            border-color: rgb(51, 4, 4);
+            
+        }
+        h1{
+            text-align: center;
+            color: rgb(12, 11, 11);
+        }
+        input{
+            background-color: aqua;
+            height: 30px;        }
+        #error{
+            color: red;
+        }
+        button{
+            margin-left: 60px;
+            background-color: blue;
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h1>Mile to KM</h1>
+    <h4><span id="error"></span></h4>
+    Mile:<input id="mile" type="text"/><br><br>
+    KM:<input id="km" type="text"/><br><br>
+    <button id="button">submit</button>
+    </div>
+    <script>
+        newmile=document.getElementById("mile")
+        newkm=document.getElementById("km")
+        newsub=document.getElementById("button")
+        newerror=document.getElementById("error")
+        newsub.addEventListener("click",function(){
+            if(newmile.value==""){
+                newerror.innerText="please enter value"
+            }
+            else{
+                newerror.innerText=""
+            newkm.value=newmile.value*1.609344
+            }
+        })
+    </script>
+
+</body>
+</html>
